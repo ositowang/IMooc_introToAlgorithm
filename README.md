@@ -1,5 +1,5 @@
-# h1 IMooc_introToAlgorithm
-## h2 慕课网算法入门课程Python实现
+###  IMooc_introToAlgorithm
+####  慕课网算法入门课程Python实现
 本项目是慕课网Liuyubo老师的学习算法思想，修炼编程内功课程的Python实现。原课程是采用c++进行讲解，附带Java代码。  
 
 本项目内容力求涵盖原课程的所有例题，练习题和提高题并给出更加丰富的解题方法。解题和算法思路将在文件开头以注释的
