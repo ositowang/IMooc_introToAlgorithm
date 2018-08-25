@@ -97,7 +97,7 @@ def __partrition(arr,l,r):
     #把待排序数组的第一个值作为基准值
     v = arr[l]
     j = l 
-    for i in range(l+1,r):
+    for i in range(l+1,r+1):
         #如果右边的值比v小，就把它换到左边来
         if arr[i] < v:
             arr[j+1],arr[i] = arr[i],arr[j+1]
@@ -128,6 +128,7 @@ if __name__ == "__main__":
 
     #测试复现老师的原地快排
     test_list2 = [i for i in range(50)]
+    random.shuffle(test_list2)
     quick_sort1(test_list2,len(test_list2))
     print(test_list2)
 
