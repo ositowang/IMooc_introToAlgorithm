@@ -3,7 +3,7 @@
 这个过程称之为 partition。对这两个子数组进行快速排序。合并结果
 """
 
-#我的原生python写法
+#我的原生python写法,双路快排
 
 def quick_sort(array):
     """
