@@ -1,34 +1,18 @@
 """
-最大堆:
-最大（小）堆是指在树中，存在一个结点而且该结点有儿子结点，该结点的data域值都不小于（大于）其儿子结点的data域值，并且它是一个完全二叉树（不是满二叉树）。
+Heapify:
+
+将list类型转化为heap
 """
 
 
 class MaxHeap:
-
-    def __init__(self, capacity):
-        self._array = [""] * (capacity+1)
-        self._size = 0
-        self.capacity = capacity
-
-    def size(self):
-        return self._size
-
-    def isEmpty(self):
-        return self._size == 0
-
-    def add(self, value):
-        # 我们的索引是从1开始的,所以我们要在索引+1的位置添加元素
-        self._array[self._size+1] = value
-        self._size += 1
-        self._shiftUp(self._size)
-
-    def _shiftUp(self, index):
-        # 通过不断和父元素比较大小，将元素上浮到相应位置
-        while index > 1 and self._array[index//2] < self._array[index]:
-            self._array[index //
-                        2], self._array[index] = self._array[index], self._array[index//2]
-            index //= 2
+    def __init__(self, array):
+        self._array = [""] * (len(array)+1)
+        for i in range(0, len(array)):
+            self._array[i+1] = array[i]
+        self._size = len(array)
+        for i in range(len(array)//2, 0, -1):
+            self._shiftDown(i)
 
     def extractMax(self):
         if not self._size > 0:
@@ -57,8 +41,10 @@ class MaxHeap:
 
 if __name__ == "__main__":
     import random
-    myheap = MaxHeap(10)
-    for i in range(10):
-        myheap.add(random.randint(0, 100))
-    while not myheap.isEmpty():
+    test1 = [i for i in range(10)]
+    random.shuffle(test1)
+    print(test1)
+    myheap = MaxHeap(test1)
+    print(myheap._array)
+    for i in range(6):
         print(myheap.extractMax())

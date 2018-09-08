@@ -7,10 +7,11 @@
 # 引入下数据结构
 class MaxHeap:
 
-    def __init__(self, capacity):
-        self._array = [""] * (capacity+1)
-        self._size = 0
-        self.capacity = capacity
+    def __init__(self, capacity,array=None):
+        if array is None:
+            self._array = [""] * (capacity+1)
+            self._size = 0
+            self.capacity = capacity 
 
     def size(self):
         return self._size
@@ -55,6 +56,7 @@ class MaxHeap:
             self._array[index], self._array[j] = self._array[j], self._array[index]
             index = j 
 
+
 def heapSort(arr,n):
     """
     @params arr: 待排序数组
@@ -69,6 +71,7 @@ def heapSort(arr,n):
 
 
 if __name__ == "__main__":
+    # 测试堆排序
     import random
     test1 = [i for i in range(100)]
     random.shuffle(test1)
